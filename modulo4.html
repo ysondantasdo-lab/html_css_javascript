@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Avançado Absoluto</title>
+    <style>
+        body {
+          font-family: sans-serif;
+          padding: 40px;
+          background: #f0f2f5;
+        }
+        h2 {
+          margin-bottom: 20px;
+          color: #333;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-bottom: 40px;
+        }
+        /* Área de navegação para reiniciar o ciclo */
+        .rodape-navegacao {
+          border-top: 2px solid #ddd;
+          padding-top: 20px;
+          text-align: center;
+        }
+        .btn-reiniciar {
+          padding: 12px 24px;
+          background-color: #7d3c98;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        .btn-reiniciar:hover {
+          background-color: #6c3483;
+        }
+        .aviso-redirecionamento {
+          display: none;
+          margin-top: 15px;
+          color: #7d3c98;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Componentes Customizados Nativos (Shadow DOM)</h2>
+    
+    <div class="container">
+        <!-- Tags personalizadas interpretadas diretamente pelo motor do navegador -->
+        <perfil-usuario name="Mozilla Developer" img="https://placedog.net"></perfil-usuario>
+        <perfil-usuario name="Estudante Web" img="https://placedog.net"></perfil-usuario>
+    </div>
+
+    <!-- Rodapé integrado para voltar ao início -->
+    <footer class="rodape-navegacao">
+        <button id="btn-voltar" class="btn-reiniciar">Voltar ao Início (Módulo 1)</button>
+        <p id="texto-aguarde" class="aviso-redirecionamento">Reiniciando o caderno... Redirecionando em 2 segundos.</p>
+    </footer>
+
+    <script>
+        // Classe que herda as propriedades de um elemento HTML comum
+        class PerfilUsuario extends HTMLElement {
+          constructor() {
+            super();
+            // Cria uma raiz shadow isolada. O estilo lá dentro não vaza para fora e vice-versa.
+            this.attachShadow({ mode: 'open' });
+          }
+
+          // Ciclo de vida executado quando o elemento entra na página
+          connectedCallback() {
+            const name = this.getAttribute('name') || 'Usuário';
+            const img = this.getAttribute('img') || 'https://placeholder.com';
+
+            // HTML e CSS encapsulados nativamente
+            this.shadowRoot.innerHTML = `
+              <style>
+                .wrapper {
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 15px;
+                  padding: 12px 24px;
+                  background: white;
+                  border-radius: 50px;
+                  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                  animation: surgir 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                img { 
+                  border-radius: 50%; 
+                  object-fit: cover;
+                }
+                span {
+                  font-weight: bold;
+                  color: #1a73e8;
+                }
+                @keyframes surgir {
+                  from { opacity: 0; transform: translateY(15px); }
+                  to { opacity: 1; transform: translateY(0); }
+                }
+              </style>
+              <div class="wrapper">
+                <img src="${img}" alt="${name}" width="50" height="50">
+                <span>${name}</span>
+              </div>
+            `;
+          }
+        }
+
+        // Registra formalmente a tag na janela do browser
+        customElements.define('perfil-usuario', PerfilUsuario);
+
+        // Lógica de Redirecionamento para o Módulo 1
+        const botaoVoltar = document.querySelector('#btn-voltar');
+        const avisoTexto = document.querySelector('#texto-aguarde');
+
+        botaoVoltar.addEventListener('click', () => {
+            // Exibe a mensagem de feedback visual na tela
+            avisoTexto.style.display = 'block';
+            
+            // Protege o fluxo desabilitando novas interações no botão
+            botaoVoltar.disabled = true;
+            botaoVoltar.style.backgroundColor = '#ccc';
+            botaoVoltar.style.cursor = 'not-allowed';
+
+            // Aguarda 2000ms e redireciona de volta para o primeiro arquivo
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
