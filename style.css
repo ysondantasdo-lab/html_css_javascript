@@ -1,42 +1,129 @@
-/* Seletor de tag universal para reset segundo padrões modernos */
+/* ================= 1. CONFIGURAÇÕES GERAIS E CORES (DARK MODE) ================= */
+:root {
+    --bg-principal: #0f172a;       /* Fundo azul escuro moderno */
+    --bg-bloco: #1e293b;            /* Fundo dos blocos de conteúdo */
+    --texto-titulo: #f8fafc;        /* Texto principal */
+    --texto-paragrafo: #94a3b8;       /* Parágrafos e descrições */
+    --cor-destaque: #38bdf8;         /* Azul neon para dar destaque */
+    --cor-botao: #334155;          /* Cor de fundo padrão dos botões */
+    --cor-botao-hover: #0284c7;    /* Cor do botão quando passa o mouse */
+}
+
+/* Reset básico para limpar as margens travadas do navegador */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
-  font-family: sans-serif;
-  padding: 20px;
+    background-color: var(--bg-principal);
+    color: var(--texto-paragrafo);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* Seletor de classe */
-.cartao {
-  border: 2px solid #333;
-  padding: 1rem;
-  margin-top: 20px;
-  border-radius: 4px;
+
+h1, h2, h3 {
+  color: var(--texto-titulo) /* Branco gelo para destacar os títulos*/
 }
-/* Seletor de ID */
-#titulo-principal {
-  color: #2c3e50;
-  margin-bottom: 10px;
+
+/* ================= 2. CABEÇALHO (HEADER) ================= */
+header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px;
 }
-p {
-  margin-bottom: 15px;
+
+header h1 {
+    font-size: 2.2rem;  
+    margin-bottom: 12px;
+    line-height: 1.3;
 }
-button {
-  padding: 8px 16px;
-  cursor: pointer;
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  border-radius: 4px;
+
+header p {
+    color: var(--cor-destaque);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
-/* Adicionado estilo para ocultar o link inicialmente */
-.aviso-link {
-  display: none; 
-  margin-top: 15px
-  color: #e74c3c;
-  font-weight: bold;
-  text-decoration: none;
+
+/* ================= 3. CONTEÚDO E SEÇÕES (SECTION / CARDS) ================= */
+main {
+    width: 100%;
+    max-width: 900px;
 }
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Transforma cada matéria (Algoritmos, HTML, CSS) em um bloco elegante */
+section {
+    background-color: var(--bg-bloco);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2e3e56;
+}
+
+/* ================= 4. ALINHAMENTO E DESIGN DOS BOTÕES (FLEXBOX) ================= */
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Faz os botões irem para a linha de baixo se faltar espaço */
+    gap: 12px;       /* Espaçamento perfeito entre os botões */
+    margin-bottom: 15px;
+}
+
+/* Tira o comportamento padrão de link (sublinhado azul) */
+.link-btn {
+    text-decoration: none;
+}
+
+/* O segredo do visual profissional dos botões */
+.btn-menu {
+    background-color: var(--cor-botao);
+    color: var(--texto-titulo);
+    border: 1px solid #475569;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Deixa o efeito de passar o mouse suave */
+}
+
+/* Efeito ao passar o mouse (Hover) - Essencial para prender a atenção */
+.btn-menu:hover {
+    background-color: var(--cor-botao-hover);
+    border-color: var(--cor-destaque);
+    transform: translateY(-2px); /* O botão sobe levemente, simulando um clique */
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* ================= 5. RODAPÉ (FOOTER) ================= */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--texto-paragrafo);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--cor-botao);
+    padding-top: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
 
