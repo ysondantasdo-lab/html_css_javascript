@@ -3,79 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 2 - Intermediário</title>
-    <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-        body {
-          font-family: sans-serif;
-          padding: 20px;
-          background-color: #f9f9f9;
-        }
-        .galeria-container {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        h2 {
-          color: #333;
-          margin-bottom: 10px;
-        }
-        /* Alinhamento moderno unidimensional usando Flexbox */
-        .flex-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
-          justify-content: center;
-          margin-top: 20px;
-          margin-bottom: 30px;
-        }
-        /* Estilo dos cards gerados pelo JS */
-        .item-card {
-          flex: 1 1 200px; /* grow, shrink, basis */
-          background: white;
-          padding: 20px;
-          border: 1px solid #ddd;
-          border-radius: 6px;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .item-card h3 {
-          color: #0066cc;
-          margin-bottom: 5px;
-        }
-        /* Área de navegação inferior */
-        .navegacao-container {
-          border-top: 2px solid #eee;
-          padding-top: 20px;
-          text-align: center;
-        }
-        .btn-proximo {
-          padding: 12px 24px;
-          background-color: #27ae60;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          font-size: 1rem;
-          font-weight: bold;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-        .btn-proximo:hover {
-          background-color: #219653;
-        }
-        .aviso-redirecionamento {
-          display: none;
-          margin-top: 15px;
-          color: #27ae60;
-          font-weight: bold;
-        }
-    </style>
+    <title>Conceito Algoritimo</title>
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
-    <section class="galeria-container">
-        <h2>Minhas Tecnologias</h2>
+  <header>
+    <h1>Conceitos Básicos do Algoritmo</h1>
+  </header>
+    <section class="algoritmo-definicao">
+        <h2>Definição de Algoritmo</h2>
         <p>Abaixo estão os cards gerados dinamicamente via JavaScript utilizando Flexbox.</p>
         
         <div id="lista-cards" class="flex-grid"></div>
@@ -85,39 +21,6 @@
             <button id="btn-avancar" class="btn-proximo">Avançar para o Módulo 3</button>
             <p id="texto-aguarde" class="aviso-redirecionamento">Preparando ambiente... Redirecionando em 2 segundos.</p>
         </div>
-    </section>
-
-    <script>
-        // Array de dados simulando uma resposta de banco de dados
-        const dados = ['HTML5', 'CSS3', 'JS ES6', 'Git & GitHub'];
-        const container = document.querySelector('#lista-cards');
-
-        // Construindo elementos dinamicamente respeitando a árvore do DOM (Padrão MDN)
-        dados.forEach(tecnologia => {
-          const div = document.createElement('div');
-          div.classList.add('item-card');
-          div.innerHTML = `<h3>${tecnologia}</h3><p>Validado pela Mozilla</p>`;
-          container.appendChild(div);
-        });
-
-        // Lógica de controle do botão e redirecionamento temporal
-        const botaoAvancar = document.querySelector('#btn-avancar');
-        const avisoTexto = document.querySelector('#texto-aguarde');
-
-        botaoAvancar.addEventListener('click', () => {
-            // Exibe o texto de aviso alterando o display CSS via JavaScript
-            avisoTexto.style.display = 'block';
-            
-            // Desabilita o botão para evitar novas requisições e cliques duplicados
-            botaoAvancar.disabled = true;
-            botaoAvancar.style.backgroundColor = '#ccc';
-            botaoAvancar.style.cursor = 'not-allowed';
-
-            // Aguarda 2000 milissegundos (2 segundos) e redireciona para a página do módulo 3
-            setTimeout(() => {
-                window.location.href = 'modulo3.html';
-            }, 2000);
-        });
-    </script>
+    </section>    
 </body>
 </html>
