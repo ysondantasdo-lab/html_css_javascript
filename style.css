@@ -54,6 +54,8 @@ header p {
     color: var(--cor-destaque);
     font-size: 1.1rem;
     font-weight: 500;
+    width: clamp(100%, 85%, 70ch);
+    margin: 0 auto 15px auto;
 }
 
 /* ================= 3. CONTEÚDO E SEÇÕES (SECTION / CARDS) ================= */
@@ -85,6 +87,22 @@ section {
     margin-bottom: 35px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     border: 1px solid #2e3e56;
+}
+
+/* Estilização profissional para os parágrafos de conteúdo */
+main section p {
+    color: var(--texto-paragrafo); /* Azul acinzentado suave, descansável para os olhos */
+    font-size: 1.05rem;            /* Tamanho de leitura ideal para web */
+    line-height: 1.7;              /* Espaçamento vertical que evita o cansaço visual */
+    letter-spacing: 0.3px;         /* Leve afastamento entre letras para melhorar a leitura */
+    width: clamp(100%, 90%, 75ch); /* Largura fluida e dinâmica que combinamos antes */
+    margin-bottom: 20px;           /* Afasta um parágrafo do outro ou do próximo elemento */
+    text-align: justify;           /* Distribui o texto elegantemente pelas laterais */
+}
+
+/* Garante que o último parágrafo de uma seção não tenha margem extra embaixo */
+main section p:last-child {
+    margin-bottom: 0;
 }
 
 /* ================= 4. ALINHAMENTO E DESIGN DOS BOTÕES (FLEXBOX) ================= */
