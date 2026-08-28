@@ -88,13 +88,11 @@ nav {
     margin-bottom: 15px;
 }
 
-/* Tira o comportamento padrão de link (sublinhado azul) */
-.link-btn {
-    text-decoration: none;
-}
 
-/* O segredo do visual profissional dos botões */
+/* Configuração do Botão de Menu no CSS que deve estar o efeito visual para parecer botões */
 .btn-menu {
+    display: inline-block; /* Garante o formato de botão correto no link <a> */
+    text-decoration: none; /* Remove o sublinhado do link */
     background-color: var(--cor-botao);
     color: var(--texto-titulo);
     border: 1px solid #475569;
@@ -112,6 +110,30 @@ nav {
     border-color: var(--cor-destaque);
     transform: translateY(-2px); /* O botão sobe levemente, simulando um clique */
     box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+/* Configuração do Botão Voltar */
+.btn-voltar {
+  text-decoration: none; /* Remove o sublinhado padrão de link */
+  /* Cores e Tipografia */
+  color: #ffffff;
+  background-color: #007bff;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  /* Garante que tenha o espaçamento funcione corretamente */
+  display: inline-block;
+  /* Espaçamento interno (Formato do botão) */
+  padding: 10px 20px;
+  /* Faz uma linha com os cantos arredondados */
+  border-radius: 6px;
+  /* Transição suave para o efeito hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.btn-menu:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px); /* Leve levantamento */
 }
 
 /* ================= 5. RODAPÉ (FOOTER) ================= */
