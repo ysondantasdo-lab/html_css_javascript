@@ -117,6 +117,12 @@ nav {
 /* Configuração do Botão de Menu no CSS que deve estar o efeito visual para parecer botões */
 .btn-menu {
     display: inline-block; /* Garante o formato de botão correto no link <a> */
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    margin: 15px 0 30px 0;
+    width: 100%;
+    max-width: 800px;
     text-decoration: none; /* Remove o sublinhado do link */
     background-color: var(--cor-botao);
     color: var(--texto-titulo);
@@ -131,6 +137,7 @@ nav {
 
 /* Efeito ao passar o mouse (Hover) - Essencial para prender a atenção */
 .btn-menu:hover {
+    
     background-color: var(--cor-botao-hover);
     border-color: var(--cor-destaque);
     transform: translateY(-2px); /* O botão sobe levemente, simulando um clique */
