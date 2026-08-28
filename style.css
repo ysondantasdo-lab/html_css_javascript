@@ -27,7 +27,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--texto-titulo) /* Branco gelo para destacar os títulos*/
+  color: var(--texto-titulo); /* Branco gelo para destacar os títulos*/
 }
 
 /* ================= 2. CABEÇALHO (HEADER) ================= */
@@ -46,7 +46,7 @@ header .btn-voltar {
 
 header h1 {
     font-size: 2.2rem;  
-    margin: 0 auto; /* Centraliza o H1 perfeitamente */;
+    margin: 0 auto; /* Centraliza o H1 perfeitamente */
     line-height: 1.3;
 }
 
