@@ -108,6 +108,13 @@ main section p:last-child {
     margin-bottom: 0;
 }
 
+/* Configurar um recuo para a linha de baixo*/
+.recuo {
+  display: inline-block; /* Permite que o recuo funcione corretamente */
+  margin-left: 20px;     /* Altere o número para aumentar ou diminuir o recuo */
+  color: #555;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
+}
+
 /* ================= 4. ALINHAMENTO E DESIGN DOS BOTÕES (FLEXBOX) ================= */
 nav {
     display: grid;

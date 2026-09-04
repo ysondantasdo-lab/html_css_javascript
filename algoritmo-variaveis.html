@@ -1,176 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 3 - Avançado</title>
-    <style>
-        /* Variáveis CSS (Custom Properties) para consistência de design */
-        :root {
-          --cor-primaria: #0066cc;
-          --cor-sucesso: #e67e22;
-          --cor-texto: #333;
-          --cor-grade: repeat(auto-fit, minmax(250px, 1fr));
-        }
-
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-
-        body {
-          font-family: sans-serif;
-          color: var(--cor-texto);
-          padding: 20px;
-          background-color: #fcfcfc;
-        }
-
-        .app-layout {
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-
-        .app-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-bottom: 20px;
-          border-bottom: 2px solid #eee;
-          margin-bottom: 20px;
-        }
-
-        .btn-acao {
-          padding: 10px 20px;
-          background-color: var(--cor-primaria);
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-weight: bold;
-        }
-
-        /* Layout bidimensional complexo com CSS Grid */
-        .grid-responsivo {
-          display: grid;
-          grid-template-columns: var(--cor-grade);
-          gap: 2rem;
-          margin-bottom: 40px;
-        }
-
-        .card-usuario {
-          border-left: 5px solid var(--cor-primaria);
-          background-color: #f8f9fa;
-          padding: 1.5rem;
-          border-radius: 0 8px 8px 0;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* Rodapé de navegação para a próxima aula */
-        .rodape-navegacao {
-          border-top: 2px solid #eee;
-          padding-top: 20px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .btn-proximo {
-          padding: 12px 24px;
-          background-color: var(--cor-sucesso);
-          color: white;
-          border: none;
-          border-radius: 4px;
-          font-size: 1rem;
-          font-weight: bold;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-
-        .btn-proximo:hover {
-          background-color: #d35400;
-        }
-
-        .aviso-redirecionamento {
-          display: none;
-          color: var(--cor-sucesso);
-          font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variáveis e Tipos de Dados</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-layout">
-      <header class="app-header">
-        <h2>Painel de Usuários Assíncrono</h2>
-        <button id="btn-atualizar" class="btn-acao">Buscar Dados</button>
-      </header>
-
-      <main id="app-conteudo" class="grid-responsivo">
-          <p>Clique no botão "Buscar Dados" para simular o consumo da API.</p>
-      </main>
-
-      <!-- Rodapé integrado para levar ao módulo definitivo -->
-      <footer class="rodape-navegacao">
-          <button id="btn-avancar" class="btn-proximo">Ir para o Módulo 4 (Conclusão)</button>
-          <p id="texto-aguarde" class="aviso-redirecionamento">Carregando Web Components... Redirecionando em 2 segundos.</p>
-      </footer>
-    </div>
-
-    <script>
-        // API pública real para testes de requisição
-        const URL_API = 'https://typicode.com';
-        const grid = document.querySelector('#app-conteudo');
-        const btnAtualizar = document.querySelector('#btn-atualizar');
-
-        // Fluxo assíncrono baseado na especificação Fetch da MDN
-        async function buscarUsuarios() {
-          try {
-            grid.innerHTML = '<p>Carregando dados da API...</p>';
-            const resposta = await fetch(URL_API);
-            
-            // Verificação obrigatória de segurança HTTP recomendada pela Mozilla
-            if (!resposta.ok) throw new Error('Falha na requisição HTTP');
-            
-            const usuarios = await resposta.json();
-            renderizarUsuarios(usuarios);
-          } catch (erro) {
-            grid.innerHTML = `<p style="color: red;">Erro: ${erro.message}</p>`;
-          }
-        }
-
-        function renderizarUsuarios(lista) {
-          grid.innerHTML = ''; // Limpa o estado de carregamento
-          
-          // Captura apenas os 4 primeiros usando Destructuring direto no parâmetro do loop
-          lista.slice(0, 4).forEach(({ name, email }) => { 
-            const card = document.createElement('div');
-            card.className = 'card-usuario';
-            card.innerHTML = `<h4>${name}</h4><p>${email}</p>`;
-            grid.appendChild(card);
-          });
-        }
-
-        btnAtualizar.addEventListener('click', buscarUsuarios);
-
-        // Lógica de Redirecionamento para o Módulo 4
-        const botaoAvancar = document.querySelector('#btn-avancar');
-        const avisoTexto = document.querySelector('#texto-aguarde');
-
-        botaoAvancar.addEventListener('click', () => {
-            // Torna visível a mensagem de transição alterando a propriedade do CSS
-            avisoTexto.style.display = 'block';
-            
-            // Desativa interações no botão para proteger o fluxo da aplicação
-            botaoAvancar.disabled = true;
-            botaoAvancar.style.backgroundColor = '#ccc';
-            botaoAvancar.style.cursor = 'not-allowed';
-
-            // Aguarda 2000ms antes de despachar a janela para a nova URL local
-            setTimeout(() => {
-                window.location.href = 'modulo4.html';
-            }, 2000);
-        });
-    </script>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>  
+    <h1>🗃️ VARIÁVEIS E TIPOS DE DADOS</h1>        
+  </header>
+  <section>
+    <h2>O que é uma Variável?</h2>
+    <p>
+      Uma variável é um espaço na memória do computador reservado
+       para guardar uma informação que o seu programa vai usar
+       ou modificar mais tarde.
+    </p>
+    <ul>
+      <li>
+        Imagine a memória do computador como um grande
+         armário cheio de gavetas.
+      </li>
+      <li>
+        Criar uma variável é o mesmo que colar uma etiqueta em uma dessas
+         gavetas para saber exatamente o que tem dentro.
+      </li>
+      <li>
+        Elas mudam de valor? Sim! Como o próprio nome diz, o conteúdo dentro
+         da "gaveta" pode ser alterado ao longo da execução do algoritmo.
+      </li>
+    </ul>
+    <h2>
+      Tipos de Dados (A Natureza da Informação)
+    </h2>
+    <p>
+      O computador precisa saber o que você vai guardar na variável para reservar o espaço correto. 
+      Não dá para guardar um texto longo em uma gaveta feita para um único número. 
+      Os tipos primitivos mais comuns são:
+    </p>
+    <ul>
+      <li>
+        Inteiro (Int): Números sem casas decimais, sejam positivos ou negativos.<br>
+          <span class="recuo">
+            Exemplos: 25 (idade), -5 (temperatura), 100 (quantidade de produtos).
+          </span>
+      </li>
+    </ul>
+  </section>
+  
 </body>
 </html>
