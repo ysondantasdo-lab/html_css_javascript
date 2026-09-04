@@ -33,6 +33,7 @@ h1, h2, h3 {
 /* ================= 2. CABEÇALHO (HEADER) ================= */
 header {
     display: flex;
+    flex-direction: column; /* Organiza o h1 e o p um embaixo do outro */
     align-items: center;
     justify-content: center;
     position: relative;
