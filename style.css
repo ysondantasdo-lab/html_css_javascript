@@ -43,7 +43,7 @@ header {
 }
 
 header .btn-voltar {
-    positon: absolute;
+    position: absolute;
     right: 0; /* Alinha o botão totalmente à direita */
     top: 10px; /* Ajusta a altura dele em relação ao título */
 }
@@ -120,12 +120,13 @@ nav {
 /* Configuração do Botão de Menu no CSS que deve estar o efeito visual para parecer botões */
 .btn-menu {
     display: inline-block; /* Garante o formato de botão correto no link <a> */
-    display: flex;
+    /* display: flex;
     flex-direction: row; 
     flex-wrap: wrap;
     margin: 15px 0 30px 0;
     width: 100%;
-    max-width: 800px;
+    max-width: 800px;*/
+    align-items: center;
     text-decoration: none; /* Remove o sublinhado do link */
     background-color: var(--cor-botao);
     color: var(--texto-titulo);
