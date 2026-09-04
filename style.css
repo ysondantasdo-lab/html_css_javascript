@@ -112,6 +112,10 @@ main section p:last-child {
 .recuo {
   display: inline-block; /* Permite que o recuo funcione corretamente */
   margin-left: 20px;     /* Altere o número para aumentar ou diminuir o recuo */
+  
+}
+
+.texto_cinza{
   color: #555;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
 }
 
