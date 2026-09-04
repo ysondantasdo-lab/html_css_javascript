@@ -39,11 +39,13 @@ header {
     position: relative;
     max-width: 800px;
     margin-bottom: 40px;
+    width: 100%; /* Garante que o cabeçalho use todo o espaço para alinhar o botão */
 }
 
 header .btn-voltar {
     positon: absolute;
-    left: o;
+    right: 0; /* Alinha o botão totalmente à direita */
+    top: 10px; /* Ajusta a altura dele em relação ao título */
 
 header h1 {
     font-size: 2.2rem;  
