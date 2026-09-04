@@ -120,12 +120,12 @@ nav {
 /* Configuração do Botão de Menu no CSS que deve estar o efeito visual para parecer botões */
 .btn-menu {
     display: inline-block; /* Garante o formato de botão correto no link <a> */
-    flex-direction: row; 
-    flex-wrap: wrap;
-    margin: 15px 0 30px 0;
-    width: 100%;
-    max-width: 800px;
-    align-items: center;
+    /* 1. Deixa os botões lado a lado e permite alinhar o texto dentro */
+    margin: 15px 0 30px 0;/* 3. Dá um espaço de 15px fora do botão (em cima e embaixo) */
+    width: auto;/* 4. Tenta esticar o botão até o limite máximo permitido */
+    min-width: 180px;/* 5. Trava a largura para o botão nunca passar de 800px */
+    flex-grow: 1;
+    align-items: center;/* 2. Centraliza o texto do botão verticalmente (cima/baixo) */
     text-decoration: none; /* Remove o sublinhado do link */
     background-color: var(--cor-botao);
     color: var(--texto-titulo);
