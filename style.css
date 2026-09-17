@@ -73,6 +73,7 @@ h2 {
     text-align: center;
     border-bottom: 2px solid var(--cor-destaque);
     padding-bottom: 8px;
+    padding-top: 12px;
 }
 
 h3 {
@@ -116,7 +117,7 @@ main section p:last-child {
 }
 
 .texto_cinza{
-  color: #555;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
+  color: #eedcdc;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
 }
 
 /* ================= 4. ALINHAMENTO E DESIGN DOS BOTÕES (FLEXBOX) ================= */

@@ -1,137 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 4 - Avançado Absoluto</title>
-    <style>
-        body {
-          font-family: sans-serif;
-          padding: 40px;
-          background: #f0f2f5;
-        }
-        h2 {
-          margin-bottom: 20px;
-          color: #333;
-        }
-        .container {
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-          margin-bottom: 40px;
-        }
-        /* Área de navegação para reiniciar o ciclo */
-        .rodape-navegacao {
-          border-top: 2px solid #ddd;
-          padding-top: 20px;
-          text-align: center;
-        }
-        .btn-reiniciar {
-          padding: 12px 24px;
-          background-color: #7d3c98;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          font-size: 1rem;
-          font-weight: bold;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-        .btn-reiniciar:hover {
-          background-color: #6c3483;
-        }
-        .aviso-redirecionamento {
-          display: none;
-          margin-top: 15px;
-          color: #7d3c98;
-          font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operadores</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Componentes Customizados Nativos (Shadow DOM)</h2>
-    
-    <div class="container">
-        <!-- Tags personalizadas interpretadas diretamente pelo motor do navegador -->
-        <perfil-usuario name="Mozilla Developer" img="https://placedog.net"></perfil-usuario>
-        <perfil-usuario name="Estudante Web" img="https://placedog.net"></perfil-usuario>
-    </div>
-
-    <!-- Rodapé integrado para voltar ao início -->
-    <footer class="rodape-navegacao">
-        <button id="btn-voltar" class="btn-reiniciar">Voltar ao Início (Módulo 1)</button>
-        <p id="texto-aguarde" class="aviso-redirecionamento">Reiniciando o caderno... Redirecionando em 2 segundos.</p>
-    </footer>
-
-    <script>
-        // Classe que herda as propriedades de um elemento HTML comum
-        class PerfilUsuario extends HTMLElement {
-          constructor() {
-            super();
-            // Cria uma raiz shadow isolada. O estilo lá dentro não vaza para fora e vice-versa.
-            this.attachShadow({ mode: 'open' });
-          }
-
-          // Ciclo de vida executado quando o elemento entra na página
-          connectedCallback() {
-            const name = this.getAttribute('name') || 'Usuário';
-            const img = this.getAttribute('img') || 'https://placeholder.com';
-
-            // HTML e CSS encapsulados nativamente
-            this.shadowRoot.innerHTML = `
-              <style>
-                .wrapper {
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 15px;
-                  padding: 12px 24px;
-                  background: white;
-                  border-radius: 50px;
-                  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-                  animation: surgir 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-                img { 
-                  border-radius: 50%; 
-                  object-fit: cover;
-                }
-                span {
-                  font-weight: bold;
-                  color: #1a73e8;
-                }
-                @keyframes surgir {
-                  from { opacity: 0; transform: translateY(15px); }
-                  to { opacity: 1; transform: translateY(0); }
-                }
-              </style>
-              <div class="wrapper">
-                <img src="${img}" alt="${name}" width="50" height="50">
-                <span>${name}</span>
-              </div>
-            `;
-          }
-        }
-
-        // Registra formalmente a tag na janela do browser
-        customElements.define('perfil-usuario', PerfilUsuario);
-
-        // Lógica de Redirecionamento para o Módulo 1
-        const botaoVoltar = document.querySelector('#btn-voltar');
-        const avisoTexto = document.querySelector('#texto-aguarde');
-
-        botaoVoltar.addEventListener('click', () => {
-            // Exibe a mensagem de feedback visual na tela
-            avisoTexto.style.display = 'block';
-            
-            // Protege o fluxo desabilitando novas interações no botão
-            botaoVoltar.disabled = true;
-            botaoVoltar.style.backgroundColor = '#ccc';
-            botaoVoltar.style.cursor = 'not-allowed';
-
-            // Aguarda 2000ms e redireciona de volta para o primeiro arquivo
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 2000);
-        });
-    </script>
-</body>
-</html>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>  
+    <h1>🧮 OPERADORES</h1>        
+  </header>
+  <section>
+    <h2>➕ Operadores Aritméticos (Matemática)</h2>
+    <p>
+      São os operadores que você já conhece da escola. Eles servem para fazer contas matemáticas. 
+      O computador é uma excelente calculadora, e você vai usar estes símbolos:
+    </p>
+    <ul>
+      <li>
+        + Soma: Soma dois valores.<br>
+          <span class="recuo texto_cinza">
+            (Ex: 10 + 5 resulta em 15)
+          </span>
+      </li>
+      <li>
+        - Subtração: Subtrai um valor do outro.<br>
+          <span class="recuo texto_cinza">
+            (Ex: 10 - 5 resulta em 5)
+          </span>
+      </li>
+      <li>
+        * Multiplicação: Multiplica dois valores. Usamos o asterisco.<br>
+          <span class="recuo texto_cinza">
+            (Ex: 4 * 2 resulta em 8)
+          </span>
+      </li>
+      <li>
+        / Divisão: Divide um valor pelo outro. Usamos a barra.<br>
+          <span class="recuo texto_cinza">
+             (Ex: 10 / 2 resulta em 5)
+          </span>
+      </li>
+      <li>
+        % Módulo (Resto da Divisão): Este é o único "diferente". Ele não dá o resultado da divisão, mas sim o que sobra dela.
+          <span class="recuo texto_cinza">
+             Exemplo: Se você dividir 5 chocolates para 2 pessoas, cada uma ganha 2 inteiros e sobra 1. 
+             Então, 5 % 2 resulta em 1. É muito usado para descobrir se um número é par ou ímpar!
+          </span>
+      </li>
+      <ul>
+  <h2>📝 Operador de Atribuição</h2>
+    <p>
+      O operador de atribuição serve para guardar um valor dentro de uma variável.
+    </p>
+    <ul>
+      <li>
+        Na maioria das linguagens, usamos o sinal de igual =<br>
+          <span class="recuo texto_cinza">
+             idade = 25 (Lê-se: "A variável idade recebe o valor 25")
+          </span>
+      </li>
+    </ul>
+ <h2>🔍 Operadores Relacionais (Comparações)</h2>
+    <p>
+      Esses operadores servem para comparar duas coisas. 
+      O resultado de uma comparação é sempre um valor lógico: 
+      ou é Verdadeiro (True) ou é Falso (False).
+    </p>
+    <ul>
+      <li>
+        == Igual a: Compara se dois valores são iguais.<br>
+          <span class="recuo texto_cinza">
+             (Ex: 5 == 5 é Verdadeiro)
+          </span>
+      </li>
+      <li>
+        != Diferente de: Compara se dois valores são diferentes.<br>
+          <span class="recuo texto_cinza">
+             (Ex: 5 != 3 é Verdadeiro)
+          </span>
+      </li>
+      <li>
+        > Maior que:<br>
+          <span class="recuo texto_cinza">
+             (Ex: 10 > 20 é Falso)
+          </span>
+      </li>
+      <li>
+        < Menor que: <br>
+          <span class="recuo texto_cinza">
+              (Ex: 10 < 20 é Verdadeiro)
+          </span>
+      </li>
+      <li>
+        >= Maior ou igual a:<br>
+          <span class="recuo texto_cinza">
+               (Ex: 10 >= 10 é Verdadeiro)
+          </span>
+      </li>
+      <li>
+        <= Menor ou igual a:<br>
+          <span class="recuo texto_cinza">
+               (Ex: 8 <= 5 é Falso)
+          </span>
+      </li>
+    </ul>
+<h2>🧠 Operadores Lógicos (As Condições)</h2>
+    <p>
+      abe quando sua mãe dizia: "Você só vai se você arrumar o quarto E lavar a louça"? 
+      Ou então: "Você pode comer bolo OU sorvete"? 
+      Na programação, fazemos exatamente isso para juntar várias comparações.
+    </p>
+    <ul>
+      <li>
+        E (AND / &&) Exige que todas as condições sejam verdadeiras.<br>
+          <span class="recuo texto_cinza">
+             Regra: Só resulta em Verdadeiro se A e B forem verdadeiros.
+          </span>
+      </li>
+      <li>
+        OU (OR / ||) Exige que pelo menos uma condição seja verdadeira.<br>
+          <span class="recuo texto_cinza">
+             Regra: Só resulta em Falso se todas as condições forem falsas.
+          </span>
+      </li>
+      <li>
+        NÃO (NOT / !) O inversor lógico. Ele atua sobre uma única condição.<br>
+          <span class="recuo texto_cinza">
+             Transforma Verdadeiro em Falso e Falso em Verdadeiro.
+          </span>
+      </li>
+      <li>
+        OU EXCLUSIVO (XOR / ^) Exige que as condições sejam estritamente diferentes entre si.<br>
+          <span class="recuo texto_cinza">
+             Regra: Dá Verdadeiro se um for V e o outro for F. Se ambos forem iguais, dá Falso.
+          </span>
+      </li>
+      <li>
+        NÃO-E (NAND / !&) O NAND é exatamente o oposto do AND. Ele faz a operação "E" e, no final, inverte o resultado.<br>
+          <span class="recuo texto_cinza">
+             Regra prática: Ele aceita qualquer combinação, exceto quando tudo for verdadeiro e responde falso.
+          </span>
+      </li>
+      <li>
+        NÃO-OU (NOR / !|) O NOR é o oposto exato do OU. Ele faz a união das condições e inverte o resultado no final.<br>
+          <span class="recuo texto_cinza">
+             Regra prática: Resulta em Verdadeiro se todas as condições forem falsas. Se aparecer um único "Verdadeiro", resultada em Falso.
+          </span>
+      </li>    
+      <li>
+        (XNOR / !^) O XNOR é o oposto do XOR. Em vez de buscar a diferença, ele busca a igualdade.<br>
+          <span class="recuo texto_cinza">
+             Regra prática: Resulta em Verdadeiro se todas as condições forem falsas. Se aparecer um único "Verdadeiro", resultada em Falso.
+          </span>
+      </li>      
+    </ul>  
+  </section>   
