@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operadores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>  
+    <h1>🔂 ESTRUTURAS DE REPETIÇÃO</h1>        
+  </header>
+  <section>
+    <h2>Enquanto o teste for verdadeiro... O Enquanto (while)</h2>
+    <p>
+      O Enquanto é a estrutura ideal para quando você não sabe exatamente quantas vezes a repetição vai acontecer. 
+      Ele funciona como um se (condicional) que se repete: 
+      o computador faz uma pergunta; se a resposta for verdadeira, 
+      ele entra no bloco, executa o código e, quando chega no fim, volta para o topo e pergunta de novo.
+    </p>
+        <pre><code>inteiro tentativas = 1
+texto senhaDigitada = ""
+// Não sabemos quantas vezes o usuário vai errar a senha!
+enquanto (senhaDigitada != "1234" E tentativas <= 3) faca
+    escreva("Digite sua senha: ")
+    leia(senhaDigitada)
+    tentativas = tentativas + 1
+fimEnquanto
+</code></pre> 
 
+    <h2>Faça primeiro, pergunte depois... O Repita / Até que (do / while)</h2>
+    <p>
+      O Repita é o irmão gêmeo do Enquanto, mas com uma diferença crucial: 
+      ele só faz o teste no final do bloco de código. 
+      Isso garante que as instruções ali dentro sejam executadas pelo menos uma vez, não importa o que aconteça.
+    </p>
+        <pre><code>inteiro numero = 3
+faca {
+    escreva(numero)
+    numero = numero - 1
+    } enquanto (numero > 0)
+escreva("BUM! 💥")
+</code></pre> 
+
+    <h2>Repetição com contagem... O Para (for)</h2>
+    <p>
+      O Para é a estrutura perfeita para quando você sabe exatamente quantas vezes quer repetir algo 
+      (ex: 10 vezes, 100 vezes, o tamanho de uma lista). 
+      Ele agrupa três coisas na mesma linha para evitar erros: 
+      a criação de uma variável contadora, a condição de parada e o incremento (o passo).
+    </p>
+        <pre><code>// A variável 'i' começa em 1; 
+o loop roda enquanto 'i' for menor ou igual a 5; 
+e aumenta +1 a cada volta (i++)
+para (inteiro i = 1; i <= 5; i = i + 1) faca
+    escreva("Esta é a volta número: ", i)
+fimPara</code></pre>
+
+    <h2>Avançado: O Para Cada (foreach)</h2>
+    <p>
+      Nas linguagens modernas, existe uma variação do Para chamada foreach (Para Cada). 
+      Ela serve especificamente para percorrer coleções de dados 
+      (como uma lista de e-mails, uma lista de produtos ou um vetor) 
+      do início ao fim, sem que você precise gerenciar contadores ou números de índices.
+    </p>
+        <pre><code>// Exemplo conceitual moderno (JavaScript/Python)
+listaAlunos = ["Ana", "Bruno", "Carlos"]
+para cada aluno em listaAlunos faca
+    enviarEmailBoasVindas(aluno)
+fimPara
+</code></pre>
+    </section>
+</body>
+</html>

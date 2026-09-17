@@ -123,6 +123,9 @@ pre {
     padding: 1px;             /* Espaço interno para o texto não colar na borda do fundo */
     border-radius: 10px;        /* Bordas suavemente arredondadas */
     border-left: 4px solid #727cd4; /* Uma barrinha cinza elegante do lado esquerdo */
+    border-bottom: 4px solid #727cd4; /* Uma barrinha cinza elegante do lado esquerdo */
+    margin-top: 10px;    /* Espaço entre a caixa e a linha de cima */
+    margin-bottom: 20px; /* Espaço entre a caixa e o conteúdo de baixo */
 }
 
 code {
