@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operadores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>  
+    <h1>🔀 ESTRUTURAS CONDICIONAIS</h1>        
+  </header>
+  <section>
+    <h2>Condicional Simples: O "Se" (if)</h2>
+    <p>
+      É a estrutura mais básica. O computador avalia uma condição (que sempre resulta em Verdadeiro ou Falso). 
+      Se ela for verdadeira, ele executa um bloco de código. 
+      Se for falsa, ele simplesmente ignora e segue a vida.
+    </p>
+        <pre><code>se (temperatura > 30)
+    escreva("Ligar o ar-condicionado.")
+fimSe</code></pre> 
+            <!-- <pre> (que vem de preformatted text, ou texto pré-formatado). 
+            Ela instrui o navegador a respeitar exatamente a forma como você digitou o texto no seu editor de código. 
+            <code> (que avisa aos navegadores e leitores de tela que aquilo é um código).-->
+     
+    <h2>Condicional Composta: O "Se / Senão" (if / else)</h2>
+    <p>
+      Aqui nós damos uma alternativa para o computador. 
+      Criamos dois caminhos mutuamente exclusivos: 
+      se a condição for verdadeira, faça o caminho A; senão (se for falsa), faça o caminho B. 
+      É impossível o computador rodar os dois caminhos ao mesmo tempo.
+    </p>
+        <pre><code>se (notaFinal >= 6.0) entao
+    escreva("Parabéns, você foi aprovado!")
+senao
+    escreva("Você ficou de recuperação. Estude mais!")
+fimSe</code></pre>
+    
+    <h2>Condicional Encadeada: O "Se / Senão Se" (if / else if)</h2>
+    <p>
+      E se você tiver mais de duas opções? É aí que encadeamos (empilhamos) várias condições. 
+      O computador vai testando uma por uma, de cima para baixo. 
+      Assim que ele encontra a primeira verdadeira, ele executa o bloco dela e ignora todo o resto que vem abaixo.
+    </p>
+        <pre><code>se (idade < 12) entao
+    escreva("Categoria: Infantil")
+senao se (idade >= 12 E idade < 18) entao
+    escreva("Categoria: Juvenil")
+senao
+    escreva("Categoria: Adulto")
+fimSe</code></pre>     
 
+    <h2> Condicional de Escolha: O "Escolha / Caso" (switch / case)</h2>
+    <p>
+      Quando você precisa testar uma única variável contra vários valores específicos (como um menu de opções), 
+      usar vários Senão Se deixa o código feio e lento. 
+      Para isso serve o Escolha. Ele vai direto ao ponto.
+    </p>
+        <pre><code>escolha (opcaoMenu)
+    caso 1:
+        escreva("Acessando o saldo da conta...")
+    caso 2:
+        escreva("Fazendo uma transferência...")
+    caso 3:
+        escreva("Saindo do sistema...")
+    padrao: // Executa se o usuário digitar qualquer outra coisa
+        escreva("Opção inválida!")
+fimEscolha</code></pre>
+    </section>
+   

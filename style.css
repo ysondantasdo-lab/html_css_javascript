@@ -116,6 +116,21 @@ main section p:last-child {
   
 }
 
+pre {
+    display: inline-block;     /* Encolhe a caixa até o tamanho do texto */
+    margin-left: 40px;         /* Empurra TODO o bloco para a direita */
+    background-color: #3d3f8a; /* Um fundo cinza bem claro para destacar */
+    padding: 1px;             /* Espaço interno para o texto não colar na borda do fundo */
+    border-radius: 10px;        /* Bordas suavemente arredondadas */
+    border-left: 4px solid #727cd4; /* Uma barrinha cinza elegante do lado esquerdo */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace; /* Fonte padrão de programação */
+    color: #c6d6f5;            /* Cor do texto principal */
+}
+
+
 .texto_cinza{
   color: #eedcdc;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
 }
