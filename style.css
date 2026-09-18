@@ -77,10 +77,10 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1rem;
-    margin: 20px 0 10px 0;
+    font-size: 1.0rem;
+    margin: 10px 0 5px 0; /*10px = Topo (Top), 0 = Direita (Right), 5px = Baixo (Bottom), 0 = Esquerda (Left)*/
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
 }
 
 /* Transforma cada matéria (Algoritmos, HTML, CSS) em um bloco elegante */
@@ -97,10 +97,11 @@ section {
 main section p {
     color: var(--texto-paragrafo); /* Azul acinzentado suave, descansável para os olhos */
     font-size: 1.05rem;            /* Tamanho de leitura ideal para web */
-    line-height: 1.7;              /* Espaçamento vertical que evita o cansaço visual */
+    line-height: 1.3;              /* Espaçamento vertical que evita o cansaço visual */
     letter-spacing: 0.3px;         /* Leve afastamento entre letras para melhorar a leitura */
     width: clamp(100%, 90%, 75ch); /* Largura fluida e dinâmica que combinamos antes */
-    margin-bottom: 20px;           /* Afasta um parágrafo do outro ou do próximo elemento */
+    margin-bottom: 5px;           /* Afasta um parágrafo do outro ou do próximo elemento */
+    margin-top: 5px;
     text-align: justify;           /* Distribui o texto elegantemente pelas laterais */
 }
 
