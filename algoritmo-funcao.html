@@ -1,1 +1,60 @@
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções e Procedimentos</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>
+    <h1>🧩 Modularização - blocos de código reaproveitáveis</h1>
+  </header>
+    <main>
+    <section>
+        <h2>Função (Sub-rotina que retorna valor)</h2>
+        <p>Do ponto de vista técnico, uma <strong>Função</strong> é um bloco de código (sub-rotina) 
+            encapsulado que processa dados de entrada e <strong>retorna obrigatoriamente um único valor.</strong>
+             O tipo de dado do retorno deve ser especificado logo na declaração da função. 
+             Ela é tratada pelo compilador como uma expressão que se resolve em um valor, 
+             o que significa que você pode atribuí-la diretamente a uma variável.</p>
+             <pre><code>funcao calcular_media(real n1, real n2) : real
+inicio
+    real resultado
+    resultado <- (n1 + n2) / 2    
+    // OBRIGATÓRIO: Devolve o valor processado para quem chamou
+    retorne resultado 
+fimfuncao
+// PROGRAMA PRINCIPAL
+inicio
+    real media_final    
+    // A função é chamada e seu retorno é guardado em uma variável
+    media_final <- calcular_media(8.5, 7.5) 
+    escreva("A média do aluno é: ", media_final)
+fim</code></pre>
+    
+        <h2>Procedimento (Sub-rotina vazia / Void)</h2>
+        <p>Um <strong>Procedimento</strong> é uma sub-rotina que executa uma sequência de instruções ou tarefas específicas, 
+            <strong>mas não retorna nenhum valor ou tipo de dado ao programa principal.</strong>
+            Tecnicamente, ele serve para modularizar ações repetitivas, 
+            como limpezas de memória, formatação de saídas de texto ou modificações diretas em estruturas por referência. 
+            Em linguagens baseadas em C, ele equivale a uma função com o tipo de retorno void.</p>
+             <pre><code>procedimento exibir_cabecalho(cadeia nome_módulo)
+inicio
+    escreval("=======================================")
+    escreval("   SISTEMA DE ALGORITMOS INTERMEDIÁRIOS")
+    escreval("   MÓDULO: ", nome_módulo)
+    escreval("=======================================")
+    // Não existe a palavra 'retorne' aqui. O bloco apenas encerra.
+fimprocedimento
+// PROGRAMA PRINCIPAL
+inicio
+    // O procedimento é invocado como um comando isolado
+    exibir_cabecalho("Funções e Procedimentos") 
+    escreva("Código rodando com sucesso...")
+fim</code></pre>
+    </section>
+    </main>
+</body>
+</html>        

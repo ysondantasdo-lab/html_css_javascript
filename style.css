@@ -7,6 +7,7 @@
     --cor-destaque: #38bdf8;         /* Azul neon para dar destaque */
     --cor-botao: #334155;          /* Cor de fundo padrão dos botões */
     --cor-botao-hover: #0284c7;    /* Cor do botão quando passa o mouse */
+    --destaque-texto: #e67e22;      /* Cor do texto com destaque */
 }
 
 /* Reset básico para limpar as margens travadas do navegador */
@@ -71,7 +72,7 @@ h2 {
     font-size: 1.6rem;
     margin-bottom: 30px;
     text-align: center;
-    border-bottom: 2px solid var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-destaque); /*var(--nome-da-variavel, #ff0000[cor-reserva]) se não achar usa cor-reserva*/
     padding-bottom: 8px;
     padding-top: 12px;
 }
@@ -112,8 +113,19 @@ main section p:last-child {
 
 /* Configurar um recuo para a linha de baixo*/
 .recuo {
-  display: inline-block; /* Permite que o recuo funcione corretamente */
-  margin-left: 20px;     /* Altere o número para aumentar ou diminuir o recuo */
+    display: block; /* Permite que o recuo funcione corretamente */
+    margin-left: 50px;     /* Altere o número para aumentar ou diminuir o recuo */
+    margin-right: 100px;     /* Altere o número para aumentar ou diminuir o recuo */
+    background-color: #3537a5;
+    border-radius: 20px; 
+    font-family: monospace; /* Fonte padrão de programação */
+    color: #d0f5fc;/* ADICIONE ESTA LINHA PARA MUDAR A COR DA FONTE */
+    border-left: 4px solid #727cd4; /* Uma barrinha cinza elegante do lado esquerdo */
+    border-bottom: 4px solid #727cd4; /* Uma barrinha cinza elegante do lado esquerdo */
+    margin-top: 10px;    /* Espaço entre a caixa e a linha de cima */
+    margin-bottom: 10px; /* Espaço entre a caixa e o conteúdo de baixo */
+    /* CORRIGIDO: Adicionado espaçamento interno para afastar o texto das bordas */
+    padding: 5px 10px 5px 10px; /*       Cima   Dir  Baixo  Esq */
   
 }
 
@@ -136,7 +148,15 @@ code {
 
 
 .texto_cinza{
-  color: #eedcdc;           /* Opcional: deixa o texto ligeiramente cinza para dar destaque */
+    font-family: 'Georgia', 'Times New Roman', Times, serif; /* Fonte clássica de leitura/citação */
+    font-style: italic; /* Deixa o texto em itálico */
+    font-size: 16px;
+    line-height: 1.6; /* Melhora o espaçamento entre as linhas do texto */
+    
+        /* Espaçamento e bordas elegantes */
+    margin: 25px 0 25px 10px; /* Mantém o recuo de 150px na esquerda para alinhar com seu layout */
+    padding: 10px 0 10px 20px; /* Dá um respiro entre a barra lateral e o texto */
+    background-color: transparent; /* Fica sem fundo, focando apenas na beleza da tipografia */
 }
 
 /* ================= 4. ALINHAMENTO E DESIGN DOS BOTÕES (FLEXBOX) ================= */
@@ -202,6 +222,61 @@ nav {
     box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3) !important; /* Cria a sombra azul brilhante */
 }
 
+.destaque {
+    font-size: 1.15rem;          /* Aumenta o tamanho da palavra (ajuste como preferir) */
+    color: var(--cor-destaque); /* Muda a cor (ex: um laranja ou a cor da sua paleta) */
+    display: inline-block;       /* Garante que o navegador possa aplicar margin e padding no texto */
+}
+/* ================= 5. DESIGN TABELA ================= */
+/* 1. Configuração Geral da Tabela */
+.caixa-tabela{
+    background-color: #112240; /* Um azul um pouco mais claro que o fundo para dar contraste */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px 10px rgba(176, 201, 238, 0.08); /*box-shadow: 
+    [Horizontal] [Vertical] [Desfoque] [Espalhamento] [Cor]
+     Sombra usando o azul claro do seu texto, bem suave */
+    padding: 0; /* Alterado para 0 para alinhar perfeitamente as células das pontas */
+    overflow: hidden;
+    margin: 20px 0; 
+}
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une as bordas em uma linha única */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna */
+    font-size: 14px;
+    color: #b0c9ee;
+}
+
+/* 2. Estilização do Cabeçalho (Th) */
+th {
+  background-color: #1a365d; /* Azul escuro corporativo/profissional */
+  color: #ffffff; /* Texto branco para contraste */
+  font-weight: 600;
+  text-transform: uppercase; /* Letras maiúsculas discretas */
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 14px 16px;
+  text-align: left; /* Alinhamento padrão à esquerda */
+}
+
+/* 3. Estilização das Células de Dados (Td) */
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0; /* Linha divisória horizontal bem clarinha */
+}
+
+/* 4. Efeito "Zebra" (Linhas alternadas para facilitar a leitura) 
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;  Um cinza quase branco 
+}
+*/
+
+/* 5. Efeito Hover (Destaca a linha onde o mouse está passando) 
+tbody tr:hover {
+  background-color: #edf2f7; Cinza um pouquinho mais escuro
+  transition: background-color 0.2s ease;  Transição suave 
+}
+*/
 
 /* ================= 5. RODAPÉ (FOOTER) ================= */
 footer {

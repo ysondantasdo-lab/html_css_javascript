@@ -18,13 +18,80 @@
             Criar 50 variáveis diferentes (nota1, nota2, ..., nota50) seria um pesadelo. 
             O array resolve isso criando uma única variável que reserva vários espaços seguidos na memória do computador..</p>
         <h3>Existem duas regras de ouro para os arrays:</h3>
-            <p><strong>Homogeneidade:</strong> Todos os elementos devem ser do mesmo tipo<br> 
+            <p><strong class="destaque">Homogeneidade:</strong> Todos os elementos devem ser do mesmo tipo<br> 
                 (apenas números inteiros, apenas textos, etc.).<br>
-            <strong>Tamanho Fixo:</strong> Você deve definir o tamanho do array no momento da criação<br>  
+            <p><strong class="destaque">Tamanho Fixo:</strong> Você deve definir o tamanho do array no momento da criação<br>  
                 (na maioria das linguagens tradicionais).
-            </p> 
+            </p>
+        
+        <h2>Vetores vs. Matrizes</h2>
+        <p>A principal diferença entre eles é o número de dimensões (direções) que usamos para acessar os dados.</p>
+        <div class="caixa-tabela">
+        <table>
+            <thead>
+                <th>Características</th>
+                <th>Vetor 1D</th>
+                <th>Vetor 2D ou mais</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dimensões</td>
+                    <td>1 dimensão (linha única)</td>
+                    <td>2 ou mais dimensões (linhas e colunas)</td>
+                </tr>
+                <tr>
+                    <td>Identificação</td>
+                    <td>Usa apenas um índice: vetor[i]</td>
+                    <td>Usa dois ou mais índices: matriz[linha][coluna]</td>                    
+                </tr>
+                <tr>
+                    <td>Uso Comum</td>
+                    <td>Listas de compras, histórico de notas</td>
+                    <td>Tabelas de dados, pixels de imagem</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+        <h2>Vetores (Arrays 1D)</h2>
+        <p>Um vetor funciona como uma linha de dados. 
+            O conceito mais importante aqui é o Índice (Index), que é a posição do elemento.</p>
+            <aside class="recuo"> <!-- <aside> (usada para informações adicionais, notas ou avisos que ficam à parte do texto principal).-->
+                Em programação, a contagem quase sempre começa no zero (0). Se um vetor tem tamanho 5, seus índices vão de 0 a 4.
+            </aside>
+        
+        <h2>Matrizes (Arrays 2D)</h2>
+        <p>A matriz adiciona uma segunda dimensão: linhas e colunas. 
+            Para encontrar um dado, você precisa cruzar essas duas informações, 
+            exatamente como no jogo de Batalha Naval.</p>
+            <aside class="recuo"> <!-- <aside> (usada para informações adicionais, notas ou avisos que ficam à parte do texto principal).-->
+                var matriz [3x3]: vetor [1..3, 1..3] de inteiro // Define que vai de 1 até 3.
+            </aside>
+        
+        <h2>Matrizes (Arrays 3D)</h2>
+        <p>Uma matriz 2D tem Linhas e Colunas. Uma matriz 3D adiciona a Profundidade (ou páginas/camadas). 
+            É como se você tivesse uma pilha de tabelas, uma atrás da outra.</p>
+            <aside class="recuo"> <!-- <aside> (usada para informações adicionais, notas ou avisos que ficam à parte do texto principal).-->
+                Para achar um valor em um cubo, você precisa de 3 coordenadas: matriz[camada][linha][coluna].
+            </aside>
+
+        <h2>Matrizes (Arrays 4D)</h2>
+        <p>Embora seja impossível para nós humanos desenharmos algo em 4 dimensões no papel, 
+            para o computador é apenas matemática.</p>
+            <aside class="recuo"> <!-- <aside> (usada para informações adicionais, notas ou avisos que ficam à parte do texto principal).-->
+                Imagine uma Ordem de Passos para montar um Cubo Mágico. 
+                Cada passo guarda um cubo 3D inteiro. 
+                Para acessar, você usaria 4 índices: matriz[passo][camada][linha][coluna].<br>
+            </aside>
+        <p class="texto_cinza">
+            **** (1ª Dimensão): Funciona como uma linha do tempo sequencial. 
+            Cada posição dessa linha guarda um estado completo do cubo.<br>
+            **** (2ª Dimensão): Escolhe qual fatia/página do cubo você está olhando naquele passo.<br>
+            **** (3ª Dimensão): Localiza a horizontal (fileira) daquela fatia.<br>
+            **** (4ª Dimensão): Localiza a vertical e encontra o bloquinho exato.
+        </p>
             
-            
+
     </section>
     </main>
 </body>
