@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Dados</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>
+    <h1>🎲 Estruturas Dinâmicas e Não Lineares</h1>
+  </header>
+    <main>
+    <section>
+        <h2>Estruturas Dinâmicas Lineares</h2>
+        <p>Diferente dos Vetores e Matrizes que têm tamanho fixo na memória,
+             as estruturas dinâmicas crescem e diminuem sob demanda usando 
+             Ponteiros.<br>
+            O Dado e o Ponteiro são vizinhos de parede. 
+            Eles se relacionam por proximidade física. 
+            O Nó é o nome da estrutura que junta os dois sob o mesmo teto. 
+        </p>
+        <h3>            </h3>
+    </section>
+    </main>
+</body>
+</html>
