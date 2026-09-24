@@ -16,15 +16,79 @@
   </header>
     <main>
     <section>
-        <h2>Estruturas Dinâmicas Lineares</h2>
-        <p>Diferente dos Vetores e Matrizes que têm tamanho fixo na memória,
-             as estruturas dinâmicas crescem e diminuem sob demanda usando 
-             Ponteiros.<br>
-            O Dado e o Ponteiro são vizinhos de parede. 
-            Eles se relacionam por proximidade física. 
-            O Nó é o nome da estrutura que junta os dois sob o mesmo teto. 
+        <h2>🏛️ Os Pilares: Como classificar Estruturas de Dados</h2>
+        <p>Toda estrutura de dados é definida por duas grandes características independentes: 
+            como ela organiza as informações logicamente (Disposição) e como ela ocupa o hardware do computador (Memória). 
         </p>
-        <h3>            </h3>
+        <h3>🌐 Estruturas Lineares (Sequenciais)</h3>
+        <p>
+           Nas estruturas lineares, os elementos são organizados em uma sequência direta e unidimensional.
+            Cada elemento possui um único antecessor e um único sucessor direto (com exceção do primeiro e do último). 
+        </p>
+        <ul>
+            <li>
+                <strong class="destaque">O Mecanismo:</strong>
+            <p>
+                    A travessia dos dados ocorre em linha reta. Para chegar ao elemento N, 
+                você obrigatoriamente precisa passar pelos elementos anteriores em ordem sequencial.
+            </p>
+            </li>
+            <li>
+                <strong class="destaque">Exemplos Padrão:</strong>
+                <p>
+                    Arrays, Listas Encadeadas simples, Pilhas (LIFO) e Filas (FIFO).
+                </p>
+            </li>
+            <li>
+                <strong class="destaque">Limitação:</strong>
+                <p>
+                    Não conseguem representar relações de hierarquia ou redes complexas de forma eficiente.
+                </p>
+            </li>
+        </ul>
+    <h3>🕸️ Estruturas Não Lineares (Multidimensionais)</h3>
+    <p>
+        Nas estruturas não lineares, os dados não seguem uma sequência única. 
+        Um elemento pode estar conectado a múltiplos outros elementos ao mesmo tempo, 
+        criando caminhos alternativos e ramificações.
+    </p>
+       <ul>
+            <li>
+                <strong class="destaque">O Mecanismo:</strong>
+            <p>
+                    A travessia não é óbvia. 
+                    Para navegar por essas estruturas, usamos algoritmos de varredura complexos
+                     que ramificam a busca em profundidade ou largura.
+            </p>
+            </li>
+            <li>
+                <strong class="destaque">As duas grandes subdivisões:</strong>
+                   <ol class="sublista">
+                        <li>
+                            <strong>Hierárquicas (Árvores): </strong>
+                            <p>
+                            Relação de "um para muitos". 
+                            Existe um nó raiz no topo e dele saem ramificações (filhos) que nunca se cruzam de volta.
+                            </p>
+                       </li>
+                       <li>
+                            <strong>Em Rede (Grafos):</strong>
+                            <p>
+                            Relação de "muitos para muitos". 
+                            Não há um topo definido. 
+                            Os nós conectam-se livremente, podendo inclusive formar ciclos (caminhos fechados).
+                            </p>
+                       </li>
+                  </ol>
+             </p>
+            </li>
+       </ul>
+    <p class="caixa">
+A palavra Grafo vem de gráfico ou grafia (que significa desenho, escrita, conexão).<br> 
+Ela é usada na matemática e na computação para descrever uma rede de conexões.<br>
+É uma teia de aranha ou o mapa do metrô.
+    </p>
+
     </section>
     </main>
 </body>
