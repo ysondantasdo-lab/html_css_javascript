@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura de Dados</title>
+    <title>Dados</title>
     <link rel="stylesheet" href="style.css">    
 </head>
 <body>
   <header>
     <a href=index.html class="btn-voltar">Voltar</a>
-    <h1>🎲 Estruturas Dinâmicas e Não Lineares</h1>
+    <h1>🎲 Estruturas de Dados Avançadas</h1>
+    <p>No nível avançado, deixamos de lado as listas e arrays comuns para estudar estruturas que resolvem problemas de alta performance,
+       processamento de grandes volumes de dados e otimização de busca. 
+       Elas são a base de mecanismos de busca, bancos de dados modernos e roteamento de redes.</p>
   </header>
     <main>
     <section>
