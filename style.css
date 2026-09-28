@@ -118,7 +118,7 @@ p.caixa{
     margin-left: 10px;     /* Altere o número para aumentar ou diminuir o recuo */
     margin-right: 20px;     /* Altere o número para aumentar ou diminuir o recuo */
     background-color: #94874f;
-    border-radius: 20px; 
+    border-radius: 20px;
     font-family: monospace; /* Fonte padrão de programação */
     color: #d0f5fc;/* ADICIONE ESTA LINHA PARA MUDAR A COR DA FONTE */
     border-left: 4px solid #4b6404; /* Uma barrinha cinza elegante do lado esquerdo */
