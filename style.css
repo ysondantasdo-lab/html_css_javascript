@@ -77,12 +77,19 @@ h2 {
     padding-top: 12px;
 }
 
+
 h3 {
-    font-size: 1.0rem;
-    margin: 10px 0 5px 0; /*10px = Topo (Top), 0 = Direita (Right), 5px = Baixo (Bottom), 0 = Esquerda (Left)*/
-    text-transform: uppercase;
-    letter-spacing: 1px; 
+    color: #f8fafc;            /* Branco puro/off-white para máximo contraste no escuro */
+    font-size: 1.3rem;         /* Aumenta o tamanho (deixa maior que o texto, que tem 1rem) */
+    font-weight: 700;          /* Deixa a fonte bem grossa/negrito */
+    margin-top: 30px;          /* Empurra o texto anterior para baixo, dando respiro ao novo tópico */
+    margin-bottom: 12px;       /* Aproxima levemente o h3 do parágrafo que o explica */
+    
+    /* DETALHE DE DESTAQUE VISUAL */
+    border-bottom: 1px solid #334155; /* Cria uma linha divisória horizontal muito elegante */
+    padding-bottom: 6px;       /* Espaço entre o texto do h3 e a linha de baixo */
 }
+
 
 /* Transforma cada matéria (Algoritmos, HTML, CSS) em um bloco elegante */
 section {
@@ -278,6 +285,28 @@ nav {
     padding-left: 0;
 }
 
+.sublista li p.destaque {
+    display: block; /* Permite que o recuo funcione corretamente */
+    margin-bottom: 8px; 
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--cor-destaque); /* Cor cinza agradável para leitura */
+    padding-left: 0;
+}
+
+/* 1. ESTILO DO TÍTULO INICIAL DO ELEMENTO (O texto verde do começo da linha) */
+.sublista li > strong:first-child {
+    color: #4ade80; /* Cor verde-limão apenas para o título "Como funciona:" ou "O Algoritmo em ação:" */
+    font-size: 1.1rem;
+    display: inline;
+}
+
+/* 2. ESTILO DOS STRONGS QUE ESTÃO DENTRO DOS PARÁGRAFOS DE EXPLICAÇÃO */
+.sublista li strong {
+    color: #e1e9fd; /* Cor para os termos internos como "Nó (Vértice)", "Aresta", etc. */
+    font-weight: 500;
+}
 
 /* Configuração do Botão de Menu no CSS que deve estar o efeito visual para parecer botões */
 .btn-menu {
@@ -333,10 +362,15 @@ nav {
 }
 
 .destaque {
-    font-size: 1.15rem;          /* Aumenta o tamanho da palavra (ajuste como preferir) */
-    color: var(--cor-destaque); /* Muda a cor (ex: um laranja ou a cor da sua paleta) */
-    display: inline-block;       /* Garante que o navegador possa aplicar margin e padding no texto */
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--cor-destaque) !important;
+    display: block; /* <-- MUDADO DE inline-block PARA block */
+    margin-bottom: 8px;
+    margin-top: 8px; /* Agora o navegador vai obedecer na hora! */
 }
+
+
 /* ================= 5. DESIGN TABELA ================= */
 /* 1. Configuração Geral da Tabela */
 .caixa-tabela{

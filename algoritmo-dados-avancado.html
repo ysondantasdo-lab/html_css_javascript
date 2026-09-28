@@ -29,15 +29,15 @@
         <ul>
             <li>
                 <strong class="destaque">O Mecanismo:</strong>
-            <p class="texto_explicativo">
+                <p class="texto_explicativo">
                     A travessia dos dados ocorre em linha reta. Para chegar ao elemento N, 
                 você obrigatoriamente precisa passar pelos elementos anteriores em ordem sequencial.
-            </p>
+                </p>
             </li>
             <li>
                 <strong class="destaque">Exemplos Padrão:</strong>
                 <p class="texto_explicativo">
-                    Arrays, Listas Encadeadas simples, Pilhas (LIFO) e Filas (FIFO).
+                    Arrays (Vetores), Listas Encadeadas, Pilhas (LIFO) e Filas (FIFO).
                 </p>
             </li>
             <li>
@@ -57,39 +57,76 @@
             <li>
                 <strong class="destaque">O Mecanismo:</strong>
             <p class="texto_explicativo">
-                    A travessia não é óbvia. 
-                    Para navegar por essas estruturas, usamos algoritmos de varredura complexos
-                     que ramificam a busca em profundidade ou largura.
-                     Computadores são máquinas muito simples: a memória deles é, fisicamente, uma linha reta de gavetas (endereço 0, 1, 2...)
+                    A travessia não é óbvia. Para navegar por essas estruturas, usamos algoritmos de varredura que ramificam a busca.
             </p>
-            <pre class="recuo texto_cinza">Visualização Humana (Tabuleiro 2x2):
+            </li>
+            <li>
+            <strong class="destaque">A Visão Lógica vs. Física:</strong>
+            <p class="texto_explicativo">
+                    Logicamente, os dados se espalham em múltiplas direções. Porém, computadores são máquinas físicas simples: 
+                    a memória RAM deles é uma longa linha reta de gavetas (endereço 0, 1, 2...). 
+                    Toda estrutura não linear precisa ser "achatada" pelo compilador para caber no hardware.
+            </p>
+            <p><strong>O Fenômeno do Achatamento de Memória (Exemplo 2D)</strong></p>
+            <pre>Visualização Humana (Tabuleiro 2x2):
         [ A, B ]
         [ C, D ]
     Visualização da Memória (O Achatamento):
         [ A, B, C, D ]  <-- Tudo vira uma linha reta!</pre>
             </li>
             <li>
-                <strong class="destaque">As duas grandes subdivisões:</strong>
+                <strong class="destaque">As estruturas não lineares dividem-se em três grandes famílias:</strong>
                 <ol class="sublista">
                     <li>
-                    <strong>Hierárquicas (Árvores): </strong>
+                    <strong>Matrizes e Arrays Multidimensionais:</strong>
                         <p class="texto_explicativo">
-                            Relação de "um para muitos". 
-                            Existe um nó raiz no topo e dele saem ramificações (filhos) que nunca se cruzam de volta. 
-                            A melhor forma de entender uma Árvore é pensar nela como um Fluxograma de Decisão Inteligente
+                            São estruturas organizadas em grades ou espaços de coordenadas. 
+                            Embora usem blocos contíguos de memória, são classificadas logicamente como não lineares 
+                            quando possuem duas ou mais dimensões, pois cada elemento se conecta com vizinhos em múltiplos eixos 
+                            (acima, abaixo, lados).
                         </p>
-                <pre>
-                 [ 50 ]  <-- Você quer o número 65. "65 é maior que 50?" -> Vá para a Direita.
+                        <ul>
+                            <li>
+                                <strong>Array (Vetor):</strong>
+                                <p class="texto_explicativo">
+                                    1 Dimensão. Uma linha reta de dados. Requer 1 índice: lista[x].
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Matriz:</strong>
+                                <p class="texto_explicativo">
+                                    2 Dimensões. Uma tabela de dados regular (linhas e colunas). Requer 2 índices: matriz[x][y].
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Array (Vetor) Multidimensional:</strong>
+                                <p class="texto_explicativo">
+                                    "N" Dimensões ((N>2)). 
+                                    Um bloco (3D) ou hiperespaço de dados (4D+). 
+                                    Requer múltiplos índices: cubo[x][y][z].
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <strong>Hierárquicas (Árvores):</strong>
+                        <p class="texto_explicativo">
+                            Relação de "um para muitos". Existe um nó raiz no topo e dele saem ramificações (filhos) que nunca se cruzam de volta. 
+                            A melhor forma de entender uma Árvore é pensar nela como um Fluxograma de Decisão Inteligente.
+                        </p>
+        <pre class="texto_cinza">
+                 [ 50 ]  &lt;-- Você quer o número 65. "65 é maior que 50?" -&gt; Vá para a Direita.
                 /      \
-             [30]      [70] <-- "65 é menor que 70?" -> Vá para a Esquerda.
+             [30]      [70] &lt;-- "65 é menor que 70?" -&gt; Vá para a Esquerda.
                       /
-                    [65] <-- Achou!</pre>
-                    <ul>
-                        <li>
-                            <strong>Mágica da Eficiência:</strong> Em vez de olhar 1 milhão de itens, 
-                            uma árvore balanceada encontra o que você quer em cerca de 20 passos. 
-                            Ela elimina metade das possibilidades a cada curva que você faz.
-                        </li>
+                    [65] &lt;-- Achou!</pre>
+
+        <ul>
+            <li>
+                <strong>Mágica da Eficiência:</strong> Em vez de olhar 1 milhão de itens, 
+                        uma árvore balanceada encontra o que você quer em cerca de 20 passos. 
+                        Ela elimina metade das possibilidades a cada curva que você faz.
+            </li>
                         <li>
                             <strong>Onde isso está escondido?</strong> Toda vez que você digita uma letra no teclado do celular e ele adivinha a palavra inteira
                              (autocompletar), uma árvore chamada Trie está correndo pelos caminhos das letras em milissegundos.
@@ -101,17 +138,73 @@
                         <p class="texto_explicativo">
                         Relação de "muitos para muitos". 
                         Não há um topo definido. 
-                        Os nós conectam-se livremente, podendo inclusive formar ciclos (caminhos fechados).
+                        Os nós conectam-se livremente, podendo inclusive formar ciclos (caminhos fechados). 
+                        Grafos são o caos das relações humanas. 
+                        Um grafo é simplesmente um mapa de conexões livres, onde qualquer ponto pode se conectar com qualquer outro ponto.
                         </p>
+                        <p class="texto_cinza">
+                            A palavra Grafo vem de gráfico ou grafia (que significa desenho, escrita, conexão).<br> 
+                            Ela é usada na matemática e na computação para descrever uma rede de conexões.<br>
+                            É uma teia de aranha ou o mapa do metrô.
+                        </p>
+                        <p class="destaque">O Grafo (Graph) na Prática: A Entrega de Carro (O "Último Quilômetro")</p>
+                        <p>
+                            Agora o pacote está dentro da van do entregador na sua cidade. 
+                            Ele tem 20 pacotes para entregar em 20 endereços diferentes. 
+                            As ruas da sua cidade não são organizadas em uma hierarquia bonitinha como estados e cidades, 
+                            e também não são uma grade perfeita. Elas se cruzam de forma caótica, têm trânsito, ruas de mão única e sem saída. 
+                            Isso é um Grafo.
+                        </p>
+                            <ul>
+                                <li>
+                                    <strong>Como funciona:</strong>
+                                        
+                                            Cada cruzamento de rua é um <strong>Nó (Vértice)</strong>. 
+                                            Cada rua que conecta esses cruzamentos é uma <strong>Aresta</strong>. 
+                                            O trânsito ou a distância dessa rua é o <strong>Peso</strong> (o custo de tempo).
+                                        
+                                </li>
+                                <li>
+                                    <strong>O Algoritmo em ação:</strong>
+                                         
+                                            O GPS do entregador usa algoritmos de grafos 
+                                         (como a <strong>Busca em Largura - BFS</strong> para caminhos mais curtos em bairros, ou o 
+                                         <strong>Algoritmo de Dijkstra</strong>) 
+                                         para calcular a sequência exata de ruas. 
+                                         O algoritmo analisa a teia de conexões 
+                                         para garantir que a van não fique andando em círculos e gaste o menor combustível possível.
+                                         
+                                </li>
+                            </ul>   
+                               
+                                <p class="destaque">Formas de Representação no Código</p>
+                                    <p>Para o computador entender um grafo, nós o traduzimos de duas maneiras principais:</p>
+                                         <ul>
+                                            <li>
+                                                <strong>Matriz de Adjacência: </strong>Uma tabela cruzando todos os nós contra todos os nós. 
+                                                Marca-se 1 onde há conexão e 0 onde não há. 
+                                                É ultra rápida para checar vizinhos, mas consome muita memória.
+                                            </li>
+                                         </ul>
+                                            O GPS do entregador usa algoritmos de grafos 
+                                         (como a <strong>Busca em Largura - BFS</strong> para caminhos mais curtos em bairros, ou o 
+                                         <strong>Algoritmo de Dijkstra</strong>) 
+                                         para calcular a sequência exata de ruas. 
+                                         O algoritmo analisa a teia de conexões 
+                                         para garantir que a van não fique andando em círculos e gaste o menor combustível possível.
+                                         
+                              
+
+
+                            </ul>
+
+
+                    
                     </li>
                   </ol>
              </li>
        </ul>
-    <p class="caixa">
-A palavra Grafo vem de gráfico ou grafia (que significa desenho, escrita, conexão).<br> 
-Ela é usada na matemática e na computação para descrever uma rede de conexões.<br>
-É uma teia de aranha ou o mapa do metrô.
-    </p>
+    
 
     </section>
     </main>
