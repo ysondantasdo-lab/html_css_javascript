@@ -20,7 +20,7 @@
       o computador faz uma pergunta; se a resposta for verdadeira, 
       ele entra no bloco, executa o código e, quando chega no fim, volta para o topo e pergunta de novo.
     </p>
-        <pre><code>inteiro tentativas = 1
+        <pre class="diagrama"><code>inteiro tentativas = 1
 texto senhaDigitada = ""
 // Não sabemos quantas vezes o usuário vai errar a senha!
 enquanto (senhaDigitada != "1234" E tentativas <= 3) faca
@@ -36,7 +36,7 @@ fimEnquanto
       ele só faz o teste no final do bloco de código. 
       Isso garante que as instruções ali dentro sejam executadas pelo menos uma vez, não importa o que aconteça.
     </p>
-        <pre><code>inteiro numero = 3
+        <pre class="diagrama"><code>inteiro numero = 3
 faca {
     escreva(numero)
     numero = numero - 1
@@ -51,7 +51,7 @@ escreva("BUM! 💥")
       Ele agrupa três coisas na mesma linha para evitar erros: 
       a criação de uma variável contadora, a condição de parada e o incremento (o passo).
     </p>
-        <pre><code>// A variável 'i' começa em 1; 
+        <pre class="diagrama"><code>// A variável 'i' começa em 1; 
 o loop roda enquanto 'i' for menor ou igual a 5; 
 e aumenta +1 a cada volta (i++)
 para (inteiro i = 1; i <= 5; i = i + 1) faca
@@ -65,7 +65,7 @@ fimPara</code></pre>
       (como uma lista de e-mails, uma lista de produtos ou um vetor) 
       do início ao fim, sem que você precise gerenciar contadores ou números de índices.
     </p>
-        <pre><code>// Exemplo conceitual moderno (JavaScript/Python)
+        <pre class="diagrama"><code>// Exemplo conceitual moderno (JavaScript/Python)
 listaAlunos = ["Ana", "Bruno", "Carlos"]
 para cada aluno em listaAlunos faca
     enviarEmailBoasVindas(aluno)

@@ -23,25 +23,26 @@
         <h3>🌐 Estruturas Lineares (Sequenciais)</h3>
         <p>
            Nas estruturas lineares, os elementos são organizados em uma sequência direta e unidimensional.
-            Cada elemento possui um único antecessor e um único sucessor direto (com exceção do primeiro e do último). 
+            Cada elemento possui um único antecessor e um único sucessor direto (com exceção do primeiro e do último).
+            Os dados são parecidos com uma linha de trem: você só consegue ir para frente ou para trás (Arrays, Listas). 
         </p>
         <ul>
             <li>
                 <strong class="destaque">O Mecanismo:</strong>
-            <p>
+            <p class="texto_explicativo">
                     A travessia dos dados ocorre em linha reta. Para chegar ao elemento N, 
                 você obrigatoriamente precisa passar pelos elementos anteriores em ordem sequencial.
             </p>
             </li>
             <li>
                 <strong class="destaque">Exemplos Padrão:</strong>
-                <p>
+                <p class="texto_explicativo">
                     Arrays, Listas Encadeadas simples, Pilhas (LIFO) e Filas (FIFO).
                 </p>
             </li>
             <li>
                 <strong class="destaque">Limitação:</strong>
-                <p>
+                <p class="texto_explicativo">
                     Não conseguem representar relações de hierarquia ou redes complexas de forma eficiente.
                 </p>
             </li>
@@ -55,33 +56,56 @@
        <ul>
             <li>
                 <strong class="destaque">O Mecanismo:</strong>
-            <p>
+            <p class="texto_explicativo">
                     A travessia não é óbvia. 
                     Para navegar por essas estruturas, usamos algoritmos de varredura complexos
                      que ramificam a busca em profundidade ou largura.
+                     Computadores são máquinas muito simples: a memória deles é, fisicamente, uma linha reta de gavetas (endereço 0, 1, 2...)
             </p>
+            <pre class="recuo texto_cinza">Visualização Humana (Tabuleiro 2x2):
+        [ A, B ]
+        [ C, D ]
+    Visualização da Memória (O Achatamento):
+        [ A, B, C, D ]  <-- Tudo vira uma linha reta!</pre>
             </li>
             <li>
                 <strong class="destaque">As duas grandes subdivisões:</strong>
-                   <ol class="sublista">
-                        <li>
-                            <strong>Hierárquicas (Árvores): </strong>
-                            <p>
+                <ol class="sublista">
+                    <li>
+                    <strong>Hierárquicas (Árvores): </strong>
+                        <p class="texto_explicativo">
                             Relação de "um para muitos". 
-                            Existe um nó raiz no topo e dele saem ramificações (filhos) que nunca se cruzam de volta.
-                            </p>
-                       </li>
-                       <li>
-                            <strong>Em Rede (Grafos):</strong>
-                            <p>
-                            Relação de "muitos para muitos". 
-                            Não há um topo definido. 
-                            Os nós conectam-se livremente, podendo inclusive formar ciclos (caminhos fechados).
-                            </p>
-                       </li>
+                            Existe um nó raiz no topo e dele saem ramificações (filhos) que nunca se cruzam de volta. 
+                            A melhor forma de entender uma Árvore é pensar nela como um Fluxograma de Decisão Inteligente
+                        </p>
+                <pre>
+                 [ 50 ]  <-- Você quer o número 65. "65 é maior que 50?" -> Vá para a Direita.
+                /      \
+             [30]      [70] <-- "65 é menor que 70?" -> Vá para a Esquerda.
+                      /
+                    [65] <-- Achou!</pre>
+                    <ul>
+                        <li>
+                            <strong>Mágica da Eficiência:</strong> Em vez de olhar 1 milhão de itens, 
+                            uma árvore balanceada encontra o que você quer em cerca de 20 passos. 
+                            Ela elimina metade das possibilidades a cada curva que você faz.
+                        </li>
+                        <li>
+                            <strong>Onde isso está escondido?</strong> Toda vez que você digita uma letra no teclado do celular e ele adivinha a palavra inteira
+                             (autocompletar), uma árvore chamada Trie está correndo pelos caminhos das letras em milissegundos.
+                        </li>
+                    </ul>
+                    </li>
+                    <li>
+                        <strong>Em Rede (Grafos):</strong>
+                        <p class="texto_explicativo">
+                        Relação de "muitos para muitos". 
+                        Não há um topo definido. 
+                        Os nós conectam-se livremente, podendo inclusive formar ciclos (caminhos fechados).
+                        </p>
+                    </li>
                   </ol>
-             </p>
-            </li>
+             </li>
        </ul>
     <p class="caixa">
 A palavra Grafo vem de gráfico ou grafia (que significa desenho, escrita, conexão).<br> 
