@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href=index.html class="btn-voltar">Voltar</a>  
+    <h1>🔎 ALGORITMO DE ORDENAÇÃO E BUSCA</h1>        
+  </header>
+  <main>
+  <section>
+    <h2>Algoritmos de Ordenação Avançados</h2>
+    <p>
+      Na ordenação básica, os algoritmos comparam elementos de dois em dois e possuem complexidade 
+      quadrática O(n<sup>2</sup>).<br> 
+      O(n²) (complexidade quadrática) significa que o tempo e o número de operações de um algoritmo crescem
+       proporcionalmente ao quadrado do volume de dados (n&sup2), o que torna o processo perigosamente
+        lento à medida que a lista aumenta.
+    </p> <!-- texto nativa do HTML para o quadrado:O(n&sup2;) 
+    <sup> para superiror e <sub> para inferior-->
+    <h3>Ordenação por Comparação Eficiente O(n*log n)</h3>
+    <p>
+       Representa a fronteira de eficiência para algoritmos que tomam decisões baseadas em comparação.
+    </p>
+    <p>
+        O logaritmo (geralmente na base 2 na computação) representa a estratégia de dividir o problema 
+       pela metade repetidas vezes.
+    </p>
+    <p>
+        Imagine que você está jogando um jogo de adivinhar um número de 1 a 16.
+        A cada palpite eu só te digo se o número correto é "maior" ou "menor".
+        A estratégia mais inteligente é chutar sempre o número do meio.
+    </p>
+       <ul class="sublista">
+        <li>
+            Você chuta 8 (metade de 16).
+        </li> 
+        <li class="marcador">
+            Eu digo: "É maior". (Resta o intervalo de 9 a 16).
+        </li>
+        <li>
+            Você chuta 12 (metade de 8 itens).
+        </li> 
+        <li class="marcador">
+            Eu digo: "É menor". (Resta de 9 a 11).
+        </li>
+        <li>
+            Você chuta 10 (metade).
+        </li>
+        <li class="marcador">
+            Eu digo: "É maior".
+        </li>
+        <li>
+            (Resta apenas o 11). Você acertou!
+        </li>
+       </ul>
+       <p>
+        Você precisou de apenas 4 passos para encontrar o número correto entre 16 opções.
+       </p> 
+       
+        <section class="calculatora">
+        <h2>Matematicamente:</h2>
+        <div class="formula">
+            <!-- Parte 1: O símbolo matemático renderizado pelo MathJax -->
+            <span class="log2">\( \log_2 \)</span>
+            <!-- Parte 2: Parêntese de abertura -->
+            <span class="math-text">(</span>
+            <!-- Parte 3: O valor de 'n' que o usuário PODE CLICAR e EDITAR -->
+            <span id="n" contenteditable="true" inputmode="numeric">16</span>
+            <!-- Parte 4: Parêntese de fechamento e igual -->
+            <span class="math-text">) = </span>
+            <!-- Parte 5: Valor de x não editável -->
+            <span id="x">4</span>
+        </div>
+        </section>
 
+
+
+
+              
+       O <strong>n</strong> representa a quantidade de dados.<br>
+       
+       Quando juntamos os dois em (n*log n), significa que o algoritmo está dividindo o problema ao meio
+        (gerando um custo de log n), mas ele precisa fazer isso para cada um dos (n) elementos da lista.
+    </p>
+      
+    <h2>Ordenação em Tempo Linear O(n)</h2>
+    <p>
+
+    </p>
+
+
+
+    </section>
+    </main>
+<script src="javascript.js"></script>
+</body>
+</html>
+        

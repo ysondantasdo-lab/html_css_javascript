@@ -1,21 +1,31 @@
-const botao = document.querySelector('#btn-acao');
-const titulo = document.querySelector('.cartao h1');
-// Seleciona o link do HTML para podermos controlá-lo
-const linkAviso = document.querySelector('#link-redirecionamento');
+// 1. Seletores corrigidos (Agora usando as suas variáveis 'n' e 'x')
+const n = document.getElementById('n');
+const x = document.getElementById('x');
 
-botao.addEventListener('click', () => {
-titulo.style.color = '#e74c3c'; // Altera a cor do título
-          
-  // 1. Mostra o texto de aviso na tela
-  linkAviso.style.display = 'block';
-          
-  // 2. Desabilita o botão para o usuário não clicar várias vezes
-  botao.disabled = true;
-  botao.style.backgroundColor = '#ccc';
+// Monitora as mudanças em tempo real quando o usuário digita no 'n'
+n.addEventListener('input', () => {
+    // Captura o texto de dentro do elemento e limpa espaços extras
+    let n_Digitado = n.textContent.trim();
+    const valor_n = parseInt(n_Digitado, 10);
 
-  // 3. Executa a mudança de página após 3000 milissegundos (3 segundos)
-  setTimeout(() => {
-      window.location.href = 'modulo2.html';
-  }, 3000);
-  });
 
+    if (isNaN(valor_n) || valor_n <= 0) {
+        x.innerText = "?";
+        return;
+    }
+
+    // Executa o cálculo usando a nossa variável segura 'valor_n'
+    const xExato = Math.log(valor_n) / Math.log(2);
+    const xArredondado = Math.ceil(xExato);
+
+    // Atualiza o x (sua variável do topo) em tempo real na tela
+    x.innerText = xArredondado;
+});
+
+// Evita que o usuário aperte "Enter" e quebre a linha dentro da fórmula
+n.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        n.blur(); // Remove o foco do clique ao apertar Enter
+    }
+});

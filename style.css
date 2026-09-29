@@ -134,7 +134,7 @@ main section p:last-child {
 ul li, 
 ol li {
     margin-bottom: 16px; /* Espaço confortável entre um item e outro */
-    line-height: 1.6;    /* Espaçamento entre as linhas do mesmo item */
+    line-height: 1.0;    /* Espaçamento entre as linhas do mesmo item */
 }
 
 ul li:last-child, 
@@ -261,17 +261,23 @@ nav {
     padding-left: 10px; /* Garante um espaço confortável antes dos números */
 }
 
+.marcador{
+    list-style-type: none; /* Remove as bolinhas/números se necessário */
+}
 .sublista .recuo {
     margin-left: 0; /* Remove a margem extra acumulada */
 }
 
+
+
 .sublista > li {
     background-color: rgba(255, 255, 255, 0.03); /* Fundo bem sutil */
     border-left: 3px solid #3b82f6; /* Barrinha azul estilizada na esquerda */
-    padding: 12px 16px; /* Espaçamento interno confortável */
-    margin-bottom: 15px; /* Espaço entre o item 1 e o item 2 */
+    padding: 4px 16px; /* Espaçamento interno confortável */
+    margin-bottom: 6px; /* Espaço entre o item 1 e o item 2 */
     border-radius: 0 8px 8px 0; /* Arredonda apenas os cantos da direita */
     list-style-position: inside; /* Traz o número para dentro da área estilizada */
+    font-size: 0.95rem;
 }
 
 .sublista > li::marker {
@@ -283,6 +289,7 @@ nav {
     margin-top: 8px;
     color: #94a3b8; /* Cor cinza agradável para leitura */
     padding-left: 0;
+    font-size: 0.95rem;
 }
 
 .sublista li p.destaque {
