@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ordenação</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']], // Permite o uso de $ para inline math
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'no-mathjax', // Ignora elementos com essa classe CSS
+      processHtmlClass: 'mathjax-foor'
+    }
+  };
+  </script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header>
@@ -14,15 +29,35 @@
   <main>
   <section>
     <h2>Algoritmos de Ordenação Avançados</h2>
+    <h3>Ordenação por Comparação Básica<span> \(O(n^2)\)</span></h3>
+    
     <p>
       Na ordenação básica, os algoritmos comparam elementos de dois em dois e possuem complexidade 
       quadrática O(n<sup>2</sup>).<br> 
-      O(n²) (complexidade quadrática) significa que o tempo e o número de operações de um algoritmo crescem
+      Isso significa que o tempo e o número de operações de um algoritmo crescem
        proporcionalmente ao quadrado do volume de dados (n&sup2), o que torna o processo perigosamente
         lento à medida que a lista aumenta.
-    </p> <!-- texto nativa do HTML para o quadrado:O(n&sup2;) 
+    </p>
+        <section class="calculadora">
+        <h2>Matematicamente:</h2>
+            <div class="formula">
+                <!-- • \( significa: "Computador, renderize tudo o que vem a seguir em modo matemático/itálico".
+                   • \) significa: "Aqui acabou a fórmula matemática, volte ao texto normal". -->
+                <span>\(\frac{n(n-1)}{2} =\)</span>
+                <span id="x2">6</span> 
+            </div>
+            <div class="formula">
+            <label for="n2"> n = </label>
+                    <input id="n2" type="number" min="1" step="1" value="4" aria-label="Valor de n">      
+            </div>    
+                <p class="nota">Em algoritmos reais como o Bubble Sort, o número exato de comparações 
+            na pior das hipóteses é menor</p>
+        </section>
+
+
+    <!-- texto nativa do HTML para o quadrado:O(n&sup2;) 
     <sup> para superiror e <sub> para inferior-->
-    <h3>Ordenação por Comparação Eficiente O(n*log n)</h3>
+    <h3>Ordenação por Comparação Eficiente O(nlog n)</h3>
     <p>
        Representa a fronteira de eficiência para algoritmos que tomam decisões baseadas em comparação.
     </p>
@@ -59,45 +94,33 @@
         </li>
        </ul>
        <p>
-        Você precisou de apenas 4 passos para encontrar o número correto entre 16 opções.
+        Você precisou de apenas 4 perguntas para encontrar o número correto entre 16 opções.
        </p> 
        
-        <section class="calculatora">
+        <section class="calculadora">
         <h2>Matematicamente:</h2>
-        <div class="formula">
-            <!-- Parte 1: O símbolo matemático renderizado pelo MathJax -->
-            <span class="log2">\( \log_2 \)</span>
-            <!-- Parte 2: Parêntese de abertura -->
-            <span class="math-text">(</span>
-            <!-- Parte 3: O valor de 'n' que o usuário PODE CLICAR e EDITAR -->
-            <span id="n" contenteditable="true" inputmode="numeric">16</span>
-            <!-- Parte 4: Parêntese de fechamento e igual -->
-            <span class="math-text">) = </span>
-            <!-- Parte 5: Valor de x não editável -->
-            <span id="x">4</span>
-        </div>
+            <div class="formula">
+                <span>\( \nlog_2( \)</span>
+                <input id="n" type="number" min="1" step="1" value="16" aria-label="Valor de n">
+                <span>\( ) = \)</span>
+                <span id="x">4</span>
+            </div>
+            <p class="nota">Número máximo de vezes que é preciso dividir as possibilidades
+                pela metade para achar o número correto. (valor arredondado para cima)</p>
         </section>
-
-
-
-
-              
+           
        O <strong>n</strong> representa a quantidade de dados.<br>
        
        Quando juntamos os dois em (n*log n), significa que o algoritmo está dividindo o problema ao meio
         (gerando um custo de log n), mas ele precisa fazer isso para cada um dos (n) elementos da lista.
     </p>
-      
-    <h2>Ordenação em Tempo Linear O(n)</h2>
-    <p>
 
-    </p>
 
 
 
     </section>
     </main>
-<script src="javascript.js"></script>
+<script src="javascript.js" defer></script>
 </body>
 </html>
         
