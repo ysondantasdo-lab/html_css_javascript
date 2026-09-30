@@ -1,31 +1,24 @@
-// 1. Seletores corrigidos (Agora usando as suas variáveis 'n' e 'x')
+//Código referente ao n^2
+const n2 = document.getElementById('n2')
+const x2 = document.getElementById('x2');
+
+n2.addEventListener('input', () => {
+    const valorn2 = Number(n2.value);
+    const resultadox2 = (valorn2 * (valorn2-1))/2;
+    x2.textContent = resultadox2; 
+});
+
+// Código referente a operação matemática de Log
 const n = document.getElementById('n');
 const x = document.getElementById('x');
 
-// Monitora as mudanças em tempo real quando o usuário digita no 'n'
 n.addEventListener('input', () => {
-    // Captura o texto de dentro do elemento e limpa espaços extras
-    let n_Digitado = n.textContent.trim();
-    const valor_n = parseInt(n_Digitado, 10);
+  const valor = Number(n.value);
 
+  if (!Number.isInteger(valor) || valor < 1) {
+    x.textContent = '?';
+    return;
+  }
 
-    if (isNaN(valor_n) || valor_n <= 0) {
-        x.innerText = "?";
-        return;
-    }
-
-    // Executa o cálculo usando a nossa variável segura 'valor_n'
-    const xExato = Math.log(valor_n) / Math.log(2);
-    const xArredondado = Math.ceil(xExato);
-
-    // Atualiza o x (sua variável do topo) em tempo real na tela
-    x.innerText = xArredondado;
-});
-
-// Evita que o usuário aperte "Enter" e quebre a linha dentro da fórmula
-n.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        n.blur(); // Remove o foco do clique ao apertar Enter
-    }
+  x.textContent = Math.ceil(Math.log2(valor)); // o Math.ceil() serve para arredondar para cima
 });

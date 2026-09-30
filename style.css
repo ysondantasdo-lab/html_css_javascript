@@ -441,18 +441,52 @@ td {
   border-bottom: 1px solid #e2e8f0; /* Linha divisória horizontal bem clarinha */
 }
 
-/* 4. Efeito "Zebra" (Linhas alternadas para facilitar a leitura) 
-tbody tr:nth-child(even) {
-  background-color: #f8fafc;  Um cinza quase branco 
-}
-*/
+/* Fórmula Matemática */
 
-/* 5. Efeito Hover (Destaca a linha onde o mouse está passando) 
-tbody tr:hover {
-  background-color: #edf2f7; Cinza um pouquinho mais escuro
-  transition: background-color 0.2s ease;  Transição suave 
+.nota {
+    font-family: 'Times New Roman', Times, serif; /* Adicionada fontes de fallback */
+    font-style: italic; 
+    font-size: 12px;
+    line-height: 1.4; /* Ajustado de 1.0 para 1.4 para o texto não ficar embolado */
+    color: #e2e8f0;
+    text-align: center; /* Substituído justify-content por text-align */
 }
-*/
+
+
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.6rem;
+}
+
+.formula input {
+  width: 3ch; /* ch 'character' é o espaço ocupado por 3 zeros na fonte escolhida {000} */
+  font: inherit; /* erda a fonte do pai .formula */
+  color: inherit; /* erda a fonte do pai .formula */
+  background: transparent;
+  border: 2px solid var(--cor-destaque, #38bdf8); /* troque pela cor do seu tema */
+  border-radius: 6px;
+  text-align: center;   /* 1. Alinhamento Horizontal  */
+  /* 2. Alinhamento Vertical Perfeito com Flexbox */
+  display: flex;
+  align-items: center;      /* Centraliza verticalmente o texto interno */
+  justify-content: center;  /* Reforça a centralização horizontal */
+
+
+  outline: none; /*• Remove aquela borda preta ou azul grossa 
+  que os navegadores mostram automaticamente quando o usuário clica dentro do campo para digitar (foco).*/
+  -moz-appearance: textfield; /* Remove as setinhas de aumentar/diminuir números (spin buttons)
+   que aparecem nativamente no navegador Firefox quando o input é do tipo numérico (type="number")*/
+}
+/*Seleciona as setinhas internas de aumentar e diminuir valor em navegadores 
+baseados em WebKit/Chromium (como Google Chrome, Edge, Safari e Opera).*/
+.formula input::-webkit-outer-spin-button,
+.formula input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Força esses navegadores a esconderem completamente essas setinhas */
+}
+
 
 /* ================= 5. RODAPÉ (FOOTER) ================= */
 footer {
